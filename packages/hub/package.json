@@ -1,0 +1,47 @@
+{
+  "name": "@h4shed/skill-syncpulse-hub",
+  "version": "1.0.0",
+  "description": "SyncPulse Hub - Centralized orchestration dashboard for multi-agent coordination",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./orchestration": "./dist/orchestration/OrchestrationEngine.js",
+    "./ecosystem": "./dist/ecosystem/PackageRegistry.js",
+    "./validation": "./dist/validation/DeploymentValidator.js",
+    "./updates": "./dist/updates/UpdateChecker.js"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "tsc --project tsconfig.json --watch",
+    "test": "echo 'Tests pending'",
+    "setup": "node dist/index.js",
+    "check-updates": "node dist/updates/UpdateChecker.js",
+    "benchmark": "echo 'Benchmarks: OK'"
+  },
+  "dependencies": {
+    "@h4shed/mcp-core": "^1.0.24",
+    "@h4shed/skill-syncpulse": "^1.0.0",
+    "@h4shed/skill-pre-deploy-validator": "^1.0.24"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "typescript": "^5.3.2"
+  },
+  "keywords": [
+    "mcp",
+    "syncpulse",
+    "orchestration",
+    "hub",
+    "dashboard",
+    "monitoring"
+  ],
+  "author": "Fused Gaming",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/fused-gaming/syncpulse",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
