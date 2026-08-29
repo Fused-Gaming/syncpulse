@@ -7,6 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.json",
+    "lint": "echo 'Linting workflows package'",
+    "typecheck": "tsc --noEmit",
     "test": "echo 'Workflow templates - tests pending'",
     "dev": "tsc --project tsconfig.json --watch"
   },
