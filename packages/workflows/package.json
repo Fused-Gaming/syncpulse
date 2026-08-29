@@ -9,7 +9,7 @@
     "build": "tsc --project tsconfig.json",
     "lint": "echo 'Linting workflows package'",
     "typecheck": "tsc --noEmit",
-    "test": "jest",
+    "test": "jest --testPathIgnorePatterns=dist --testMatch='**/src/__tests__/**/*.test.ts'",
     "dev": "tsc --project tsconfig.json --watch"
   },
   "dependencies": {

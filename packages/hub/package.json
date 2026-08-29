@@ -17,7 +17,7 @@
     "dev": "tsc --project tsconfig.json --watch",
     "lint": "echo 'Linting hub package'",
     "typecheck": "tsc --noEmit",
-    "test": "jest",
+    "test": "jest --testPathIgnorePatterns=dist --testMatch='**/src/__tests__/**/*.test.ts'",
     "setup": "node dist/index.js",
     "check-updates": "node dist/updates/UpdateChecker.js",
     "benchmark": "echo 'Benchmarks: OK'"
