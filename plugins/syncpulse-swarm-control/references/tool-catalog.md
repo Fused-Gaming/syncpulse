@@ -17,6 +17,26 @@ Live, authoritative package data (versions, verified-maintainer status, dist-tag
 
 Every tool name above is short for `@h4shed/<name>` (e.g. `tool-vite` = `@h4shed/tool-vite`).
 
+## Package-hub additions (beyond `@h4shed/tool-*`)
+
+Not everything in the `@h4shed` package hub is a `tool-*` wrapper — the four foundation packages and standalone products (e.g. `@h4shed/rock-hardened`, `dynagraph`) get the same registry treatment but carry extra fields in `registry/tools.registry.json`:
+
+| Package | npmPublished | Bin (npx) | Workflow doc |
+|---|---|---|---|
+| `@h4shed/mcp-core` | ✅ | none (MCP server only) | `references/package-workflows.md#h4shedmcp-core` |
+| `@h4shed/mcp-cli` | ✅ | `fused-gaming-mcp` | `references/package-workflows.md#h4shedmcp-cli` |
+| `@h4shed/skill-syncpulse` | ✅ | none (MCP server only) | `references/package-workflows.md#h4shedskill-syncpulse` |
+| `@h4shed/syncpulse-hub` | ✅ | none (MCP server only) | `references/package-workflows.md#h4shedsyncpulse-hub` |
+| `@h4shed/rock-hardened` | ✅ | `hardened-changelogger` / `hc` | `references/package-workflows.md#h4shedrock-hardened` |
+| `dynagraph` | ❌ (not yet published) | none exposed | `references/package-workflows.md#dynagraph` |
+
+The four foundation packages are also already wired as MCP servers in `.mcp.json` at the plugin root — their registry `bin: null` reflects that they're MCP servers, not standalone CLIs (except `mcp-cli`, which is both a dependency of the others and its own CLI).
+
+- `npmPublished: false` means documentation-only — never install or route to it (see `capability-policy.md` § *Pre-publish package-hub additions*).
+- `bin: null` on a published package means it's library-only; route to it as an import, not a CLI.
+- `bin` entries are real `npx <command>` invocations taken from the package's own `package.json`, never guessed.
+- `workflow` is an anchor into `references/package-workflows.md`, which has the actual command sequence/usage per package.
+
 ## How a tool gets assigned
 
 1. `scripts/route-intent.mjs` matches free-text intent to a rule in `config/routing-table.json`, which carries a `supportingTools` array.
