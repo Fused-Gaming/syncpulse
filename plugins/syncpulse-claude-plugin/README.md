@@ -307,7 +307,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](../../CONTRIBUTING.md) fo
 - 📖 [Full Documentation](https://github.com/fused-gaming/syncpulse#readme)
 - 🐛 [Issue Tracker](https://github.com/fused-gaming/syncpulse/issues)
 - 💬 [Discussions](https://github.com/fused-gaming/syncpulse/discussions)
-- 📧 [Email Support](mailto:support@fused-gaming.com)
+- 📧 [Email Support](mailto:support@vln.gg)
 
 ## License
 

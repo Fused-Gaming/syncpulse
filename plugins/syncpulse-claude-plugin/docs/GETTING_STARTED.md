@@ -305,7 +305,7 @@ npm install --save-dev @types/node @types/jest
 - 📖 [Documentation](../README.md)
 - 🐛 [Report Issues](https://github.com/fused-gaming/syncpulse/issues)
 - 💬 [Ask Questions](https://github.com/fused-gaming/syncpulse/discussions)
-- 📧 [Email Support](mailto:support@fused-gaming.com)
+- 📧 [Email Support](mailto:support@vln.gg)
 
 ---
 

@@ -5,7 +5,7 @@
   "description": "Multi-agent orchestration and coordination for autonomous workflows with SyncPulse",
   "author": {
     "name": "Fused Gaming",
-    "email": "support@fused-gaming.com",
+    "email": "support@vln.gg",
     "url": "https://github.com/fused-gaming/syncpulse"
   },
   "repository": {
@@ -93,7 +93,7 @@
   "support": {
     "issues": "https://github.com/fused-gaming/syncpulse/issues",
     "discussions": "https://github.com/fused-gaming/syncpulse/discussions",
-    "email": "support@fused-gaming.com"
+    "email": "support@vln.gg"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
