@@ -16,27 +16,35 @@ export default {
   projects: [
     {
       displayName: 'core',
+      testEnvironment: 'node',
       testMatch: ['<rootDir>/packages/core/src/__tests__/**/*.test.ts'],
       transform: { '^.+\\.tsx?$': 'ts-jest' },
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+      testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     },
     {
       displayName: 'hub',
+      testEnvironment: 'node',
       testMatch: ['<rootDir>/packages/hub/src/__tests__/**/*.test.ts'],
       transform: { '^.+\\.tsx?$': 'ts-jest' },
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+      testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     },
     {
       displayName: 'workflows',
+      testEnvironment: 'node',
       testMatch: ['<rootDir>/packages/workflows/src/__tests__/**/*.test.ts'],
       transform: { '^.+\\.tsx?$': 'ts-jest' },
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+      testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     },
     {
       displayName: 'claude-plugin',
+      testEnvironment: 'node',
       testMatch: ['<rootDir>/plugins/syncpulse-claude-plugin/src/__tests__/**/*.test.ts'],
       transform: { '^.+\\.tsx?$': 'ts-jest' },
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+      testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     },
   ],
 };
