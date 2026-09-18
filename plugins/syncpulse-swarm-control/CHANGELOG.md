@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-- Added `@h4shed/rock-hardened` and `dynagraph` to `registry/tools.registry.json` as the first package-hub entries beyond `@h4shed/tool-*` wrappers, with `npmPublished`, `bin` (real `npx` commands, or `null` when none are exposed), and `workflow` fields.
+- Added the four `FOUNDATION_ORDER` packages (`@h4shed/mcp-core`, `@h4shed/mcp-cli`, `@h4shed/skill-syncpulse`, `@h4shed/syncpulse-hub`) to `registry/tools.registry.json` with real `npx`/MCP-server invocations, matching what `.mcp.json` already wires — previously these were only reachable via live `discover-ecosystem.mjs` classification, not documented in the static registry.
+- Added `@h4shed/rock-hardened` and `dynagraph` to `registry/tools.registry.json` as the first non-foundation, non-`tool-*` package-hub entries, with `npmPublished`, `bin` (real `npx` commands, or `null` when none are exposed), and `workflow` fields.
 - Added `references/package-workflows.md`: per-package usage docs (actual command sequences) that the registry's new `workflow` field points into.
 - Documented the pre-publish handling for package-hub additions (`npmPublished: false` = doc-only, never install/route) in `references/capability-policy.md`.
 - Added a package-hub section to `references/tool-catalog.md` distinguishing `tool-*` wrappers from standalone hub products.

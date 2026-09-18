@@ -342,6 +342,68 @@
       "lastDiscoveredAt": "2026-09-18T16:15:00.000Z"
     },
     {
+      "name": "@h4shed/mcp-core",
+      "category": "foundation",
+      "workspace": "foundation",
+      "agent": "coordinator",
+      "verifiedH4shed": true,
+      "npmPublished": true,
+      "latestKnownVersion": "1.0.40",
+      "description": "Core MCP server and skill registry — registers and serves installed @h4shed skills, tools, and agents to Claude. Foundation package #1 of 4; must be present before any other @h4shed package is treated as installed.",
+      "repo": "https://github.com/fused-gaming/fused-gaming-skill-mcp",
+      "bin": null,
+      "workflow": "references/package-workflows.md#h4shedmcp-core",
+      "source": "seed",
+      "lastDiscoveredAt": "2026-09-18T16:20:00.000Z"
+    },
+    {
+      "name": "@h4shed/mcp-cli",
+      "category": "foundation",
+      "workspace": "foundation",
+      "agent": "coordinator",
+      "verifiedH4shed": true,
+      "npmPublished": true,
+      "latestKnownVersion": "1.0.40",
+      "description": "CLI for managing Fused Gaming MCP skills and configuration. Foundation package #2 of 4.",
+      "repo": "https://github.com/fused-gaming/fused-gaming-skill-mcp",
+      "bin": {
+        "fused-gaming-mcp": "npx fused-gaming-mcp <command> (see --help; manages skill/config install and status)"
+      },
+      "workflow": "references/package-workflows.md#h4shedmcp-cli",
+      "source": "seed",
+      "lastDiscoveredAt": "2026-09-18T16:20:00.000Z"
+    },
+    {
+      "name": "@h4shed/skill-syncpulse",
+      "category": "foundation",
+      "workspace": "foundation",
+      "agent": "coordinator",
+      "verifiedH4shed": true,
+      "npmPublished": true,
+      "latestKnownVersion": "0.2.29",
+      "description": "SyncPulse coordination state: task graph, workspace ownership, verification gates, and swarm memory. Foundation package #3 of 4.",
+      "repo": "https://github.com/fused-gaming/fused-gaming-skill-mcp",
+      "bin": null,
+      "workflow": "references/package-workflows.md#h4shedskill-syncpulse",
+      "source": "seed",
+      "lastDiscoveredAt": "2026-09-18T16:20:00.000Z"
+    },
+    {
+      "name": "@h4shed/syncpulse-hub",
+      "category": "foundation",
+      "workspace": "foundation",
+      "agent": "coordinator",
+      "verifiedH4shed": true,
+      "npmPublished": true,
+      "latestKnownVersion": "0.1.28",
+      "description": "Ecosystem-wide discovery/update/orchestration dashboard for installed @h4shed packages. Foundation package #4 of 4.",
+      "repo": "https://github.com/fused-gaming/fused-gaming-skill-mcp",
+      "bin": null,
+      "workflow": "references/package-workflows.md#h4shedsyncpulse-hub",
+      "source": "seed",
+      "lastDiscoveredAt": "2026-09-18T16:20:00.000Z"
+    },
+    {
       "name": "dynagraph",
       "category": "media-rendering",
       "workspace": "implementation",

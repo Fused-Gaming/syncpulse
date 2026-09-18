@@ -2,6 +2,38 @@
 
 Per-package usage docs for `@h4shed` package-hub entries whose `registry/tools.registry.json` entry carries a `bin`/`workflow` field. Each entry here mirrors what its registry row claims — if you change one, change the other in the same commit. This file exists so `capability-scout`/`expand-ecosystem` (and any operator) can see how to actually invoke a package without re-deriving it from source each time.
 
+## Foundation packages
+
+These four are the `FOUNDATION_ORDER` list in `scripts/discover-ecosystem.mjs` and must be present, in this exact order, before any other `@h4shed` package is treated as installed (see `skills/expand-ecosystem/SKILL.md` Step 2). All four are already wired as MCP servers in `.mcp.json` at the plugin root — the `npx` commands below are what that config runs, and are also how to invoke them standalone (e.g. for a smoke test outside Claude).
+
+### `@h4shed/mcp-core`
+
+- **npm:** published, `bin: null` — pure MCP server library, no standalone CLI.
+- **Run as an MCP server:** `npx --no-install -y @h4shed/mcp-core` (already wired as `h4shed-mcp-core` in `.mcp.json`).
+- Role: registry/loading layer — registers and serves every other installed `@h4shed` skill/tool/agent to Claude. Nothing else in the ecosystem functions without this being installed first.
+
+### `@h4shed/mcp-cli`
+
+- **npm:** published, exposes `bin: fused-gaming-mcp`.
+- **Workflow:**
+  ```bash
+  npx fused-gaming-mcp --help     # see available subcommands
+  npx fused-gaming-mcp <command>  # manage skill/config install and status
+  ```
+- Depends on `@h4shed/mcp-core` (declared dependency) — install/verify core first.
+
+### `@h4shed/skill-syncpulse`
+
+- **npm:** published, `bin: null` — runs as an MCP server, not a standalone CLI.
+- **Run as an MCP server:** `npx --no-install -y @h4shed/skill-syncpulse` (wired as `h4shed-syncpulse` in `.mcp.json`, with `SYNCPULSE_EMAIL_ENABLED`/`SYNCPULSE_TELEMETRY_ENABLED` env toggles — both default `false` in this plugin's config).
+- Role: coordination state — task graph, workspace ownership, verification gates, swarm memory.
+
+### `@h4shed/syncpulse-hub`
+
+- **npm:** published, `bin: null` — runs as an MCP server, not a standalone CLI.
+- **Run as an MCP server:** `npx --no-install -y @h4shed/syncpulse-hub` (wired as `h4shed-syncpulse-hub` in `.mcp.json`, with `SYNCPULSE_HUB_MUTATIONS_ENABLED=false` by default in this plugin's config — flip only with an explicit human decision gate per `capability-policy.md`, since mutations are P2+).
+- Role: ecosystem-wide discovery/update/orchestration dashboard for installed `@h4shed` packages.
+
 ## `@h4shed/rock-hardened`
 
 - **npm:** `@h4shed/rock-hardened` (published, `npmPublished: true`)
