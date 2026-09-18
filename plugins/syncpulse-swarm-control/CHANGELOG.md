@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Added `@h4shed/rock-hardened` and `dynagraph` to `registry/tools.registry.json` as the first package-hub entries beyond `@h4shed/tool-*` wrappers, with `npmPublished`, `bin` (real `npx` commands, or `null` when none are exposed), and `workflow` fields.
+- Added `references/package-workflows.md`: per-package usage docs (actual command sequences) that the registry's new `workflow` field points into.
+- Documented the pre-publish handling for package-hub additions (`npmPublished: false` = doc-only, never install/route) in `references/capability-policy.md`.
+- Added a package-hub section to `references/tool-catalog.md` distinguishing `tool-*` wrappers from standalone hub products.
+
 ## 0.5.0
 
 - Added `references/hive-architecture-v2.md`: adopted a set of 20 architectural improvements from an internal review, marked per-item as **Implemented** (working code, tested) or **Specified** (documented, not yet running). Adopted thesis: make the coordination substrate more deterministic than the agents operating on it.

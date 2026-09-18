@@ -46,6 +46,10 @@ Record:
 
 Imported catalog entries (e.g. `registry/claude-flow-agents.registry.json`) are metadata only, not executable capabilities — they carry no risk tier until someone writes a real `agents/<name>.md` for them and that new agent file goes through this same lifecycle like any other capability.
 
+### Pre-publish package-hub additions
+
+A `registry/tools.registry.json` entry with `npmPublished: false` (e.g. `dynagraph` before its first npm release) is documentation only — it records that the package exists in the `@h4shed` package hub and what it will offer, not that it is installable. Never install, `npx` run, or route to a package with `npmPublished: false`, regardless of what its `bin`/`workflow` fields describe; those fields document the intended interface for when it ships. `npmPublished: true` with `bin: null` (a published package that exposes no CLI yet, only a library import) is P1 at most — route to it as a dependency import, never invent a CLI invocation it doesn't expose. Flip `npmPublished` to `true` only after `sync-registries.mjs` (or a manual `npm view <pkg>`) confirms the package resolves on the registry with `h4shed` as a maintainer.
+
 ## Capability shadow mode (required for P2 promotion)
 
 Before an incumbent tool or skill is replaced, run the candidate against the same real tasks the incumbent handles, without using the candidate's output for anything — the incumbent's result is still what ships. Compare over 20–50 representative executions:
