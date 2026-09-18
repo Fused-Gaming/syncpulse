@@ -1,117 +1,21 @@
 {
-  "name": "@h4shed/claude-plugin-syncpulse",
-  "displayName": "SyncPulse Orchestrator",
-  "version": "1.0.0",
-  "description": "Claude plugin for SyncPulse multi-agent orchestration and workflow coordination",
-  "type": "module",
-  "main": "plugins/syncpulse-claude-plugin/dist/index.js",
-  "types": "plugins/syncpulse-claude-plugin/dist/index.d.ts",
-  "author": {
+  "name": "syncpulse-marketplace",
+  "owner": {
     "name": "Fused Gaming",
-    "email": "support@fused-gaming.com",
-    "url": "https://github.com/fused-gaming"
+    "url": "https://github.com/Fused-Gaming"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fused-gaming/syncpulse.git",
-    "directory": "plugins/syncpulse-claude-plugin"
-  },
-  "license": "Apache-2.0",
-  "keywords": [
-    "claude",
-    "plugin",
-    "syncpulse",
-    "orchestration",
-    "multi-agent",
-    "workflow",
-    "mcp",
-    "automation"
-  ],
-  "categories": [
-    "productivity",
-    "automation",
-    "orchestration",
-    "ai-agents"
-  ],
-  "icon": "🔄",
-  "color": "#6366f1",
-  "capabilities": {
-    "tools": {
-      "count": 17,
-      "categories": [
-        "workflow-execution",
-        "agent-coordination",
-        "state-management",
-        "email-integration"
-      ]
+  "plugins": [
+    {
+      "name": "syncpulse-orchestrator",
+      "source": "./plugins/syncpulse-claude-plugin",
+      "description": "Claude plugin for SyncPulse multi-agent orchestration and workflow coordination",
+      "version": "1.0.0"
     },
-    "resources": false,
-    "prompts": false,
-    "sampling": false
-  },
-  "requirements": {
-    "nodeVersion": ">=20.0.0",
-    "npmVersion": ">=10.0.0",
-    "memory": "75-100MB",
-    "diskSpace": "500MB"
-  },
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
-  },
-  "pricing": {
-    "model": "free",
-    "features": {
-      "free": {
-        "workflows": "unlimited",
-        "agents": "up to 5",
-        "apiCalls": "1000/month",
-        "storage": "1GB"
-      }
+    {
+      "name": "syncpulse-swarm-control",
+      "source": "./plugins/syncpulse-swarm-control",
+      "description": "SyncPulse workspace-scoped swarm orchestration with intent routing, least-cost model selection, verification gates, live @h4shed capability discovery, and human decision gates.",
+      "version": "0.5.0"
     }
-  },
-  "documentation": {
-    "homepage": "https://github.com/fused-gaming/syncpulse#readme",
-    "gettingStarted": "https://github.com/fused-gaming/syncpulse/blob/main/plugins/syncpulse-claude-plugin/docs/GETTING_STARTED.md",
-    "api": "https://github.com/fused-gaming/syncpulse/blob/main/docs/API.md",
-    "examples": "https://github.com/fused-gaming/syncpulse/blob/main/docs/EXAMPLES.md",
-    "troubleshooting": "https://github.com/fused-gaming/syncpulse/blob/main/plugins/syncpulse-claude-plugin/docs/TROUBLESHOOTING.md"
-  },
-  "support": {
-    "issues": "https://github.com/fused-gaming/syncpulse/issues",
-    "discussions": "https://github.com/fused-gaming/syncpulse/discussions",
-    "email": "support@fused-gaming.com"
-  },
-  "metadata": {
-    "installCount": 0,
-    "rating": 5.0,
-    "reviews": 0,
-    "verified": true,
-    "official": true,
-    "compatible": {
-      "nodeVersions": ["20.x", "22.x"],
-      "platforms": ["linux", "macos", "windows"],
-      "claude": ["sonnet-5", "opus-5", "haiku-4.5"]
-    }
-  },
-  "security": {
-    "permissions": [
-      "read:workflows",
-      "write:workflows",
-      "read:agents",
-      "write:agents",
-      "send:email"
-    ],
-    "dataCollected": [
-      "workflow_execution_logs",
-      "agent_state_snapshots",
-      "email_delivery_status"
-    ],
-    "privacyPolicy": "https://github.com/fused-gaming/syncpulse#privacy",
-    "termsOfService": "https://github.com/fused-gaming/syncpulse#license"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  }
+  ]
 }
