@@ -1,0 +1,135 @@
+{
+  "name": "syncpulse-orchestrator",
+  "displayName": "SyncPulse Orchestrator",
+  "version": "1.0.0",
+  "description": "Multi-agent orchestration and coordination for autonomous workflows with SyncPulse",
+  "author": {
+    "name": "Fused Gaming",
+    "email": "support@fused-gaming.com",
+    "url": "https://github.com/fused-gaming/syncpulse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fused-gaming/syncpulse.git",
+    "directory": "plugins/syncpulse-claude-plugin"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "orchestration",
+    "multi-agent",
+    "workflow",
+    "coordination",
+    "mcp",
+    "automation"
+  ],
+  "capabilities": {
+    "tools": {
+      "count": 17,
+      "categories": [
+        "workflow-execution",
+        "agent-coordination",
+        "state-management",
+        "email-integration"
+      ]
+    },
+    "resources": false,
+    "prompts": false,
+    "sampling": false
+  },
+  "requirements": {
+    "nodeVersion": ">=20.0.0",
+    "npmVersion": ">=10.0.0",
+    "memory": "75-100MB",
+    "diskSpace": "500MB"
+  },
+  "dependencies": {
+    "@h4shed/skill-syncpulse": "^1.0.0",
+    "@h4shed/skill-syncpulse-hub": "^1.0.0",
+    "@h4shed/skill-syncpulse-workflows": "^1.0.0",
+    "@h4shed/mcp-core": "^1.0.24"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "jest": "^29.7.0",
+    "@types/node": "^20.10.6"
+  },
+  "entry": {
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "tsc --project tsconfig.json --watch",
+    "test": "jest",
+    "lint": "eslint 'src/**/*.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "categories": [
+    "productivity",
+    "automation",
+    "orchestration",
+    "ai-agents"
+  ],
+  "icon": "🔄",
+  "color": "#6366f1",
+  "pricing": {
+    "model": "free",
+    "features": {
+      "free": {
+        "workflows": "unlimited",
+        "agents": "up to 5",
+        "apiCalls": "1000/month",
+        "storage": "1GB"
+      }
+    }
+  },
+  "documentation": {
+    "homepage": "https://github.com/fused-gaming/syncpulse#readme",
+    "gettingStarted": "docs/GETTING_STARTED.md",
+    "api": "docs/API.md",
+    "examples": "docs/EXAMPLES.md",
+    "troubleshooting": "docs/TROUBLESHOOTING.md"
+  },
+  "support": {
+    "issues": "https://github.com/fused-gaming/syncpulse/issues",
+    "discussions": "https://github.com/fused-gaming/syncpulse/discussions",
+    "email": "support@fused-gaming.com"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public",
+    "tag": "latest"
+  },
+  "metadata": {
+    "installCount": 0,
+    "rating": 5.0,
+    "reviews": 0,
+    "verified": true,
+    "official": true,
+    "compatible": {
+      "nodeVersions": ["20.x", "22.x"],
+      "platforms": ["linux", "macos", "windows"],
+      "claude": ["sonnet-5", "opus-5", "haiku-4.5"]
+    }
+  },
+  "changelog": {
+    "url": "https://github.com/fused-gaming/syncpulse/blob/main/CHANGELOG.md",
+    "latest": "1.0.0"
+  },
+  "security": {
+    "permissions": [
+      "read:workflows",
+      "write:workflows",
+      "read:agents",
+      "write:agents",
+      "send:email"
+    ],
+    "dataCollected": [
+      "workflow_execution_logs",
+      "agent_state_snapshots",
+      "email_delivery_status"
+    ],
+    "privacyPolicy": "https://github.com/fused-gaming/syncpulse#privacy",
+    "termsOfService": "https://github.com/fused-gaming/syncpulse#license"
+  }
+}
