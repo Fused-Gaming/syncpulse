@@ -2,13 +2,16 @@ export default {
   testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.test.ts'],
   transform: { '^.+\\.tsx?$': 'ts-jest' },
-  roots: ['<rootDir>/packages'],
+  roots: ['<rootDir>/packages', '<rootDir>/plugins'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   collectCoverageFrom: [
     'packages/*/src/**/*.ts',
+    'plugins/*/src/**/*.ts',
     '!packages/*/src/**/__tests__/**',
     '!packages/*/src/**/*.test.ts',
+    '!plugins/*/src/**/__tests__/**',
+    '!plugins/*/src/**/*.test.ts',
   ],
   projects: [
     {

@@ -19,9 +19,10 @@
     "paths": {
       "@h4shed/skill-syncpulse": ["packages/core/src"],
       "@h4shed/skill-syncpulse-hub": ["packages/hub/src"],
-      "@h4shed/skill-syncpulse-workflows": ["packages/workflows/src"]
+      "@h4shed/skill-syncpulse-workflows": ["packages/workflows/src"],
+      "@h4shed/claude-plugin-syncpulse": ["plugins/syncpulse-claude-plugin/src"]
     }
   },
-  "include": ["packages/*/src/**/*"],
-  "exclude": ["node_modules", "dist", "packages/*/dist"]
+  "include": ["packages/*/src/**/*", "plugins/*/src/**/*"],
+  "exclude": ["node_modules", "dist", "packages/*/dist", "plugins/*/dist"]
 }
