@@ -144,6 +144,25 @@ syncpulse/
 └── LICENSE                # Apache 2.0 license
 ```
 
+## Claude Plugin Marketplace
+
+This repository is the SyncPulse Claude Code plugin marketplace, housing the full ecosystem of modular tools, skills, and packages under the SyncPulse plugin store (`.claude-plugin/marketplace.json`):
+
+```bash
+claude plugin marketplace add Fused-Gaming/syncpulse
+claude plugin install syncpulse-orchestrator@syncpulse-marketplace
+claude plugin install syncpulse-swarm-control@syncpulse-marketplace
+```
+
+Plugins are sourced from [`plugins/`](plugins):
+
+| Plugin | Path |
+|--------|------|
+| `syncpulse-orchestrator` | [`plugins/syncpulse-claude-plugin`](plugins/syncpulse-claude-plugin) |
+| `syncpulse-swarm-control` | [`plugins/syncpulse-swarm-control`](plugins/syncpulse-swarm-control) |
+
+> This marketplace was previously hosted at `Fused-Gaming/Fused-Gaming-Skill-MCP`; installs should point to `Fused-Gaming/syncpulse` going forward.
+
 ## Documentation
 
 - [API Reference](docs/API.md) — Complete API documentation

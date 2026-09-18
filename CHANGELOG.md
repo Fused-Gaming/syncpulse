@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Claude Code plugin marketplace (`.claude-plugin/marketplace.json`) hosting the SyncPulse plugin ecosystem, moved here from `Fused-Gaming/Fused-Gaming-Skill-MCP`.
+- `plugins/syncpulse-swarm-control` — swarm orchestration plugin (intent routing, model selection, verification gates, ecosystem discovery) copied over from the `Fused-Gaming-Skill-MCP` monorepo.
 - Initial monorepo setup with 3 workspace packages (core, hub, workflows)
 - Repository structure and configuration
 - Root documentation and startup guide
