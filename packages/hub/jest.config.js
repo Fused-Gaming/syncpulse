@@ -1,5 +1,5 @@
 export default {
-  displayName: 'claude-plugin',
+  displayName: 'hub',
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['<rootDir>/src'],
