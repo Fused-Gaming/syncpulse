@@ -26,5 +26,9 @@ export default {
       displayName: 'workflows',
       testMatch: ['<rootDir>/packages/workflows/src/__tests__/**/*.test.ts'],
     },
+    {
+      displayName: 'claude-plugin',
+      testMatch: ['<rootDir>/plugins/syncpulse-claude-plugin/src/__tests__/**/*.test.ts'],
+    },
   ],
 };
