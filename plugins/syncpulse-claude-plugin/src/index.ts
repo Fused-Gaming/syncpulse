@@ -3,38 +3,10 @@
  *
  * Main entry point for the SyncPulse Claude plugin, integrating
  * multi-agent orchestration capabilities with Claude AI.
+ *
+ * This plugin provides lazy-loaded access to orchestration, hub,
+ * and workflow capabilities to minimize startup overhead.
  */
-
-import { Orchestrator } from '@h4shed/skill-syncpulse';
-import { SyncPulseHub } from '@h4shed/skill-syncpulse-hub';
-import * as Workflows from '@h4shed/skill-syncpulse-workflows';
-
-/**
- * Initialize the SyncPulse plugin for Claude
- * Registers all orchestration tools and capabilities
- */
-export async function initializeSyncPulsePlugin() {
-  try {
-    // Initialize core orchestrator
-    const orchestrator = new Orchestrator();
-
-    // Initialize hub for dashboard and monitoring
-    const hub = new SyncPulseHub();
-
-    // Register all workflows
-    const workflows = Workflows;
-
-    return {
-      orchestrator,
-      hub,
-      workflows,
-      initialized: true,
-      timestamp: new Date().toISOString(),
-    };
-  } catch (error) {
-    throw new Error(`Failed to initialize SyncPulse plugin: ${error}`);
-  }
-}
 
 /**
  * Plugin metadata for marketplace registration
@@ -51,19 +23,39 @@ export const pluginMetadata = {
 };
 
 /**
- * Export core orchestrator class
+ * Initialize the SyncPulse plugin for Claude
+ * Registers all orchestration tools and capabilities
  */
-export { Orchestrator } from '@h4shed/skill-syncpulse';
+export async function initializeSyncPulsePlugin() {
+  try {
+    // Lazy load packages to avoid import issues during build
+    const { Orchestrator } = await import('@h4shed/skill-syncpulse');
+    const { SyncPulseHub } = await import('@h4shed/skill-syncpulse-hub');
+    const Workflows = await import('@h4shed/skill-syncpulse-workflows');
+
+    // Initialize core orchestrator
+    const orchestrator = new Orchestrator();
+
+    // Initialize hub for dashboard and monitoring
+    const hub = new SyncPulseHub();
+
+    return {
+      orchestrator,
+      hub,
+      workflows: Workflows,
+      initialized: true,
+      timestamp: new Date().toISOString(),
+    };
+  } catch (error) {
+    throw new Error(`Failed to initialize SyncPulse plugin: ${error}`);
+  }
+}
 
 /**
- * Export hub class for dashboard access
+ * Type-safe re-exports for development
  */
-export { SyncPulseHub } from '@h4shed/skill-syncpulse-hub';
-
-/**
- * Export workflow utilities
- */
-export * as Workflows from '@h4shed/skill-syncpulse-workflows';
+export type { Orchestrator } from '@h4shed/skill-syncpulse';
+export type { SyncPulseHub } from '@h4shed/skill-syncpulse-hub';
 
 // Default export
 export default {
