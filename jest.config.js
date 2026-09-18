@@ -2,7 +2,7 @@ export default {
   testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.test.ts'],
   transform: { '^.+\\.tsx?$': 'ts-jest' },
-  roots: ['<rootDir>/packages', '<rootDir>/plugins'],
+  roots: ['<rootDir>/packages'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   collectCoverageFrom: [
@@ -17,14 +17,20 @@ export default {
     {
       displayName: 'core',
       testMatch: ['<rootDir>/packages/core/src/__tests__/**/*.test.ts'],
+      transform: { '^.+\\.tsx?$': 'ts-jest' },
+      moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     },
     {
       displayName: 'hub',
       testMatch: ['<rootDir>/packages/hub/src/__tests__/**/*.test.ts'],
+      transform: { '^.+\\.tsx?$': 'ts-jest' },
+      moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     },
     {
       displayName: 'workflows',
       testMatch: ['<rootDir>/packages/workflows/src/__tests__/**/*.test.ts'],
+      transform: { '^.+\\.tsx?$': 'ts-jest' },
+      moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     },
     {
       displayName: 'claude-plugin',
